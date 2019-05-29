@@ -80,6 +80,8 @@ class LabelViewController: UIViewController {
         tableView.backgroundColor = UIColor.flatBlack
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {[unowned self] in
             self.vm?.fetchLabelMoels(page: 0).subscribe(onNext: { (data) in
@@ -172,3 +174,23 @@ extension LabelViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 
+extension LabelViewController: DZNEmptyDataSetSource {
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty_icon")
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "空空如也, 快去添加弹幕吧"
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): #colorLiteral(red: 0.2017793059, green: 0.5989613533, blue: 0.856895864, alpha: 1),
+                                         NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)]
+        
+        let attributeString = NSAttributedString(string: text, attributes: attributes)
+        
+        return attributeString
+    }
+}
+
+extension LabelViewController: DZNEmptyDataSetDelegate {
+    
+}
