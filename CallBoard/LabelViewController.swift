@@ -17,7 +17,7 @@ class LabelViewController: UIViewController {
     @IBOutlet weak var addButton: MoveButton!
     var tiggerCount = BehaviorRelay<Int>(value: 0)
     private var page = 0
-    var vm: LabelModel!
+    var vm: LabelModel?
     var datasource: [LabelModel] = []
     
     override var canBecomeFirstResponder: Bool {
@@ -46,9 +46,9 @@ class LabelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let userId = AVUser.current()?.objectId {
-            vm = LabelModel(userId: "5cee15a17b968a00767fbcc5")
-//        }
+        if let userId = AVUser.current()?.objectId {
+            vm = LabelModel(userId: userId)
+        }
         
         ColorHelper.changeStatusBarStyle(.lightContent)
         title = "弹幕列表"
@@ -82,7 +82,7 @@ class LabelViewController: UIViewController {
         tableView.dataSource = self
         
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {[unowned self] in
-            self.vm.fetchLabelMoels(page: 0).subscribe(onNext: { (data) in
+            self.vm?.fetchLabelMoels(page: 0).subscribe(onNext: { (data) in
                 self.datasource = data
                 self.tableView.reloadData()
                 self.tableView.mj_header.endRefreshing()
@@ -93,7 +93,7 @@ class LabelViewController: UIViewController {
         
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {[unowned self] in
             self.page += 1
-            self.vm.fetchLabelMoels(page: self.page).subscribe(onNext: { (models) in
+            self.vm?.fetchLabelMoels(page: self.page).subscribe(onNext: { (models) in
                 self.datasource += models
                 if models.count == 0 {
                     self.tableView.mj_footer.endRefreshingWithNoMoreData()

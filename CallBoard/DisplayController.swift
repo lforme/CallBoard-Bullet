@@ -24,6 +24,7 @@ class DisplayController: UIViewController {
     
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var introLabel: UILabel!
     
     deinit {
         print("Deinit")
@@ -81,16 +82,15 @@ class DisplayController: UIViewController {
         view.addSubview(marLabel)
         view.addSubview(ltmLabel)
     
-        marLabel.text = "双击屏幕可以看到返回按钮"
-        marLabel.font = UIFont.systemFont(ofSize: 18)
+        self.marLabel.font = UIFont.boldSystemFont(ofSize: CGFloat(self.model!.font))
+        self.ltmLabel.font = UIFont.boldSystemFont(ofSize: CGFloat(self.model!.font))
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {[weak self] in
-            self?.marLabel.text = self?.model.displayText
-        }
+        marLabel.text = model.displayText
         
-        ltmLabel.text = "双击屏幕可以看到返回按钮"
-        ltmLabel.font = UIFont.systemFont(ofSize: 18)
-        
+        UIView.animate(withDuration: 2, delay: 3, options: .curveEaseInOut, animations: {
+            self.introLabel.alpha = 0
+        }, completion: nil)
+    
         marLabel.textAlignment = .center
         marLabel.snp.makeConstraints { (maker) in
             maker.center.equalToSuperview()
@@ -108,10 +108,6 @@ class DisplayController: UIViewController {
         marLabel.textColor = ColorHelper(rawValue: model.color)?.getColor()
         ltmLabel.textColor = ColorHelper(rawValue: model.color)?.getColor()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {[unowned self] in
-            self.marLabel.font = UIFont.boldSystemFont(ofSize: CGFloat(self.model!.font))
-            self.ltmLabel.font = UIFont.boldSystemFont(ofSize: CGFloat(self.model!.font))
-        }
         
         marLabel.speed = .duration(CGFloat(model.speed))
         
@@ -140,7 +136,7 @@ class DisplayController: UIViewController {
             default: break
             }
             
-            timer.delay(.seconds(2), scheduler: MainScheduler.instance).subscribe(onNext: {[weak self] (_) in
+            timer.delay(.seconds(1), scheduler: MainScheduler.instance).subscribe(onNext: {[weak self] (_) in
                 self?.ltmLabel.text = ""
                 self?.ltmLabel.text = self?.model.displayText
             }).disposed(by: rx.disposeBag)
