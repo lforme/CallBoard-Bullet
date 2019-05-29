@@ -46,9 +46,9 @@ class LabelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let userId = AVUser.current()?.objectId {
-            vm = LabelModel(userId: userId)
-        }
+//        if let userId = AVUser.current()?.objectId {
+            vm = LabelModel(userId: "5cee15a17b968a00767fbcc5")
+//        }
         
         ColorHelper.changeStatusBarStyle(.lightContent)
         title = "弹幕列表"

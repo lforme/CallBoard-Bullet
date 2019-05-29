@@ -271,7 +271,9 @@ class AddDanMuController: UITableViewController {
         let model3 = SettingModel(type: 2, itemName: "64", value: 64)
         let model4 = SettingModel(type: 2, itemName: "72", value: 72)
         let model5 = SettingModel(type: 2, itemName: "108", value: 108)
-        fontCVDatasource = [model0, model1, model2, model3, model4, model5]
+        let model6 = SettingModel(type: 2, itemName: "208", value: 208)
+        let model7 = SettingModel(type: 2, itemName: "300", value: 300)
+        fontCVDatasource = [model0, model1, model2, model3, model4, model5, model6, model7]
     }
     
     func setupColorCollectionView() {

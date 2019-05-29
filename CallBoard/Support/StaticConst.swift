@@ -27,7 +27,7 @@ struct DatabaseKey {
 
 struct Keys {
     
-    static let leanCloudId = ""
-    static let leanCloudClentKey = ""
-    static let amdinPwd = ""
+    static let leanCloudId = "UYRUUXA0htgwVbaTSOdMqReE-gzGzoHsz"
+    static let leanCloudClentKey = "GGpa7f8JM4cIphclmplCWhlS"
+    static let amdinPwd = "bbqqdd123"
 }
