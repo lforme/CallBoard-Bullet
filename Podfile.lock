@@ -1,0 +1,125 @@
+PODS:
+  - Action (4.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - AlignedCollectionViewFlowLayout (1.1.2)
+  - AVOSCloud (11.6.3)
+  - AVOSCloudIM (11.6.3):
+    - AVOSCloud (= 11.6.3)
+    - AVOSCloudIM/_ARC (= 11.6.3)
+    - AVOSCloudIM/_NOARC (= 11.6.3)
+  - AVOSCloudIM/_ARC (11.6.3):
+    - AVOSCloud (= 11.6.3)
+    - AVOSCloudIM/_NOARC (= 11.6.3)
+  - AVOSCloudIM/_NOARC (11.6.3):
+    - AVOSCloud (= 11.6.3)
+  - AVOSCloudLiveQuery (11.6.3):
+    - AVOSCloud (= 11.6.3)
+    - AVOSCloudIM (= 11.6.3)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Differentiator (4.0.1)
+  - DZNEmptyDataSet (1.8.1)
+  - EasyAnimation (2.2.1)
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.4.0)
+  - IQKeyboardManagerSwift (6.3.0)
+  - LTMorphingLabel (0.7.0)
+  - MarqueeLabel (4.0.0)
+  - MJRefresh (3.2.0)
+  - PKHUD (5.2.1)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - SnapKit (5.0.0)
+  - Then (2.4.0)
+
+DEPENDENCIES:
+  - Action (~> 4.0.0)
+  - AlignedCollectionViewFlowLayout
+  - AVOSCloud
+  - AVOSCloudLiveQuery
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - DZNEmptyDataSet
+  - EasyAnimation
+  - IGListKit (~> 3.0)
+  - IQKeyboardManagerSwift (= 6.3.0)
+  - LTMorphingLabel
+  - MarqueeLabel
+  - MJRefresh
+  - PKHUD (~> 5.2.1)
+  - RxCocoa (~> 5.0.0)
+  - RxDataSources
+  - RxSwift (~> 5.0.0)
+  - SnapKit (~> 5.0.0)
+  - Then
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Action
+    - AlignedCollectionViewFlowLayout
+    - AVOSCloud
+    - AVOSCloudIM
+    - AVOSCloudLiveQuery
+    - Differentiator
+    - DZNEmptyDataSet
+    - EasyAnimation
+    - IGListKit
+    - IQKeyboardManagerSwift
+    - LTMorphingLabel
+    - MarqueeLabel
+    - MJRefresh
+    - PKHUD
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - Then
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  Action: 0d14986aad0f1330aa27ce65d0cdeaacbb63d91c
+  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
+  AVOSCloud: 3148cbb1d05be4e479cffa206f147ef09a470fdf
+  AVOSCloudIM: 415ec613caa269f71aecc1439f0b27aec9174ec2
+  AVOSCloudLiveQuery: 43da88e8f30a38401e625a83cb4f7cf35fa97186
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  EasyAnimation: 226d133d23ef0ef99ddfb8928ff2a9a4a77d1cfd
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
+  MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
+
+PODFILE CHECKSUM: 731099c525d917db6dee3653693d96353914e9b4
+
+COCOAPODS: 1.5.3
