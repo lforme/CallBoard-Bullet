@@ -25,21 +25,21 @@
                                         <rect key="frame" x="40" y="40" width="254" height="698"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnb-8U-x3L">
-                                                <rect key="frame" x="40" y="40" width="174" height="618"/>
+                                                <rect key="frame" x="20" y="40" width="214" height="618"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MHH-YV-r3c">
-                                                        <rect key="frame" x="58" y="140" width="58.5" height="338"/>
+                                                        <rect key="frame" x="78" y="140" width="58.5" height="338"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="弹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-ZB-L0t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="58.5" height="69.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="58"/>
-                                                                <color key="textColor" red="0.1089943426" green="0.54200629960000002" blue="0.80782823829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="textColor" red="0.58330470323562622" green="0.40210354328155518" blue="0.50196933746337891" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="幕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxJ-zq-Nmq">
                                                                 <rect key="frame" x="0.0" y="89.5" width="58.5" height="69.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="58"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" red="0.35176831483840942" green="0.17111805081367493" blue="0.24706307053565979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="超" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7m-AC-QwP">
@@ -57,23 +57,23 @@
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.51372549020000002" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.97982865571975708" green="0.92530077695846558" blue="0.93725603818893433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="MHH-YV-r3c" firstAttribute="centerX" secondItem="hnb-8U-x3L" secondAttribute="centerX" id="CFf-8i-d4a"/>
                                                     <constraint firstItem="MHH-YV-r3c" firstAttribute="centerY" secondItem="hnb-8U-x3L" secondAttribute="centerY" id="V8T-2r-5Hh"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.60227620601654053" green="0.74080115556716919" blue="0.45877218246459961" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="hnb-8U-x3L" firstAttribute="leading" secondItem="C71-6n-JEl" secondAttribute="leading" constant="40" id="Grj-WS-H0J"/>
-                                            <constraint firstAttribute="trailing" secondItem="hnb-8U-x3L" secondAttribute="trailing" constant="40" id="Swp-gc-cal"/>
+                                            <constraint firstItem="hnb-8U-x3L" firstAttribute="leading" secondItem="C71-6n-JEl" secondAttribute="leading" constant="20" id="Grj-WS-H0J"/>
+                                            <constraint firstAttribute="trailing" secondItem="hnb-8U-x3L" secondAttribute="trailing" constant="20" id="Swp-gc-cal"/>
                                             <constraint firstItem="hnb-8U-x3L" firstAttribute="top" secondItem="C71-6n-JEl" secondAttribute="top" constant="40" id="ewA-TZ-Wue"/>
                                             <constraint firstAttribute="bottom" secondItem="hnb-8U-x3L" secondAttribute="bottom" constant="40" id="klH-tZ-iHM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.79917293789999999" green="0.0065725045280000003" blue="0.41973149780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.60227620601654053" green="0.74080115556716919" blue="0.45877218246459961" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="C71-6n-JEl" firstAttribute="top" secondItem="STV-5L-7cd" secondAttribute="top" constant="40" id="GeJ-Zh-Jrz"/>
                                     <constraint firstAttribute="bottom" secondItem="C71-6n-JEl" secondAttribute="bottom" constant="40" id="IXb-Is-mBF"/>
@@ -82,7 +82,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93773585557937622" green="0.97251325845718384" blue="0.97255092859268188" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="STV-5L-7cd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0j7-Tz-qJj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="STV-5L-7cd" secondAttribute="trailing" constant="40" id="39z-Ct-H9R"/>
