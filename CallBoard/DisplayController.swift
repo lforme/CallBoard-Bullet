@@ -93,16 +93,13 @@ class DisplayController: UIViewController {
     
         marLabel.textAlignment = .center
         marLabel.snp.makeConstraints { (maker) in
-            maker.center.equalToSuperview()
-            maker.left.equalToSuperview().offset(20)
-            maker.right.equalToSuperview().offset(-20)
+            maker.edges.equalToSuperview().offset(20)
         }
         
         ltmLabel.textAlignment = .center
+        ltmLabel.numberOfLines = 0
         ltmLabel.snp.makeConstraints { (maker) in
-            maker.center.equalToSuperview()
-            maker.left.equalToSuperview().offset(20)
-            maker.right.equalToSuperview().offset(-20)
+            maker.edges.equalToSuperview().offset(20)
         }
         
         marLabel.textColor = ColorHelper(rawValue: model.color)?.getColor()

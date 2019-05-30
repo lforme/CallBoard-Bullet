@@ -214,7 +214,7 @@ class AddDanMuController: UITableViewController {
             cv?.backgroundColor = UIColor.clear
             cv?.register(UINib(nibName: "TextCell", bundle: nil), forCellWithReuseIdentifier: "TextCell")
             cv?.collectionViewLayout = alignedFlowLayout
-            cv?.contentInset = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+            cv?.contentInset = UIEdgeInsets(top: 0, left: -18, bottom: 0, right: 0)
         }
     }
     

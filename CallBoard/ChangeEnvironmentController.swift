@@ -88,7 +88,6 @@ class ChangeEnvironmentController: UITableViewController {
         })
         
         saveButton.rx.bind(to: saveAtion) {[unowned self] (_) -> ChangeEnvironmentInput in
-            
             return ChangeEnvironmentInput(self.textField.text!, self.mySwitch.isOn)
         }
         

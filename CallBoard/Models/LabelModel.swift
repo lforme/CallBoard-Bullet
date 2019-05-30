@@ -18,6 +18,7 @@ class LabelModel {
     var color: Int = 0
     var flashOn: Int = 0
     var displayText: String = "这是一段展示的话"
+    var createTime: String?
     
     private let query = AVQuery(className: DatabaseKey.labelTable)
     
@@ -60,7 +61,7 @@ class LabelModel {
             self.query.limit = 10
             self.query.skip = 10 * page
             self.query.cachePolicy = AVCachePolicy.networkElseCache
-                
+            
             self.query.findObjectsInBackground { (objs, error) in
                 if let e = error {
                     o.onError(e)
@@ -68,12 +69,13 @@ class LabelModel {
                     let entities = objs?.compactMap({ (elem) -> LabelModel? in
                         guard let dict = elem as? AVObject else { return nil }
                         guard let uid = dict["userId"] as? String,
-                        let style = dict["style"] as? Int,
-                        let speed = dict["speed"] as? Int,
-                        let font = dict["font"] as? Int,
-                        let color = dict["color"] as? Int,
-                        let flashOn = dict["flashOn"] as? Int,
-                            let displayText = dict["displayText"] as? String else { return nil }
+                            let style = dict["style"] as? Int,
+                            let speed = dict["speed"] as? Int,
+                            let font = dict["font"] as? Int,
+                            let color = dict["color"] as? Int,
+                            let flashOn = dict["flashOn"] as? Int,
+                            let displayText = dict["displayText"] as? String,
+                            let time = dict.createdAt?.localString() else { return nil }
                         
                         let m = LabelModel(userId: uid)
                         m.style = style
@@ -82,7 +84,7 @@ class LabelModel {
                         m.color = color
                         m.flashOn = flashOn
                         m.displayText = displayText
-                        
+                        m.createTime = time
                         return m
                     })
                     

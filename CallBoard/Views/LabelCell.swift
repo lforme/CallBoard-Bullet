@@ -14,10 +14,11 @@ class LabelCell: UITableViewCell {
     
     @IBOutlet weak var bgView: UIView!
     var myLabel: MarqueeLabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         bgView.clipsToBounds = true
         bgView.layer.cornerRadius = 3
         bgView.backgroundColor = UIColor.randomFlat
@@ -39,8 +40,11 @@ class LabelCell: UITableViewCell {
     func bindData(model: LabelModel) {
         myLabel.text = model.displayText
         myLabel.textColor = ColorHelper(rawValue: model.color)?.getColor()
+        if let t = model.createTime {
+            timeLabel.text = "创建时间: \(t)"
+        }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

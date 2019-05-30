@@ -21,6 +21,18 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-6j-LPF">
                         <rect key="frame" x="20" y="10" width="528" height="149.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cur-X5-nTI">
+                                <rect key="frame" x="520" y="139.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Cur-X5-nTI" secondAttribute="trailing" constant="8" id="1Zv-wX-lEP"/>
+                            <constraint firstAttribute="bottom" secondItem="Cur-X5-nTI" secondAttribute="bottom" constant="10" id="Qjj-uQ-uiT"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
@@ -34,6 +46,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bgView" destination="0p2-6j-LPF" id="lF0-Ps-fpC"/>
+                <outlet property="timeLabel" destination="Cur-X5-nTI" id="osQ-9w-Xgt"/>
             </connections>
             <point key="canvasLocation" x="25" y="43"/>
         </tableViewCell>

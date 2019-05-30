@@ -10,6 +10,7 @@ import UIKit
 import WebKit
 import RxCocoa
 import RxSwift
+import PKHUD
 
 
 class PrivacyViewController: UIViewController {
@@ -18,7 +19,7 @@ class PrivacyViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     
     var tiggerCount = BehaviorRelay<Int>(value: 0)
-
+    
     override var canBecomeFirstResponder: Bool {
         get {
             return true
@@ -51,8 +52,11 @@ class PrivacyViewController: UIViewController {
             
             guard let privacy = object as? AVObject, let isAlert = privacy.object(forKey: "isFristShow") as? Bool, let isShowButton = privacy.object(forKey: "backButtonHiden") as? Bool, let urlString = privacy.object(forKey: "privacyWebSite") as? String else { return }
             
-            let url = URL(string: urlString)
-            this.privacyWeb.load(URLRequest(url: url!))
+            if let url = URL(string: urlString) {
+                this.privacyWeb.load(URLRequest(url: url))
+            } else {
+                HUD.flash(.label("请设置正确的URL地址"), delay: 2)
+            }
             
             if !isAlert {
                 this.dismiss(animated: false, completion: nil)
@@ -78,9 +82,12 @@ class PrivacyViewController: UIViewController {
         
         query.findObjectsInBackground {[weak self] (objs, _) in
             guard let this = self, let objc = objs?.first as? AVObject, let showButton = objc.object(forKey: "backButtonHiden") as? Bool, let urlString = objc.object(forKey: "privacyWebSite") as? String else { return }
-            let url = URL(string: urlString)
+            if let url = URL(string: urlString) {
+                this.privacyWeb.load(URLRequest(url: url))
+            } else {
+                HUD.flash(.label("请设置正确的URL地址"), delay: 2)
+            }
             this.backButton.isHidden = !showButton
-            this.privacyWeb.load(URLRequest(url: url!))
         }
     }
     

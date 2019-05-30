@@ -56,25 +56,28 @@ class LabelViewController: UIViewController {
         changeEnvironment()
         becomeFirstResponder()
         
-        AVUser.loginAnonymously { (user, error) in
-            if let e = error {
-                print(e.localizedDescription)
-            } else {
-                print(user ?? "")
-                NotificationCenter.default.post(name: .loginStateDidChnage, object: true)
-            }
-        }
-        
         NotificationCenter.default.rx.notification(.refreshState)
             .takeUntil(rx.deallocated)
             .observeOn(MainScheduler.instance)
             .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (_) in
                 self?.tableView.mj_header.beginRefreshing()
             }).disposed(by: rx.disposeBag)
+        
+        NotificationCenter.default.rx.notification(.loginStateDidChnage).takeUntil(rx.deallocated)
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (objc) in
+                guard let success = objc.object as? Bool else { return }
+                if success {
+                    if let userId = AVUser.current()?.objectId {
+                        self?.vm = LabelModel(userId: userId)
+                        self?.tableView.mj_header.beginRefreshing()
+                    }
+                }
+            }).disposed(by: rx.disposeBag)
     }
     
     func setupTableView() {
-        tableView.rowHeight = 100
+        tableView.rowHeight = 160
         tableView.register(UINib.init(nibName: "LabelCell", bundle: nil), forCellReuseIdentifier: "LabelCell")
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = UIColor.flatBlack
@@ -106,15 +109,21 @@ class LabelViewController: UIViewController {
             }, onError: { (error) in
                 HUD.flash(.label(error.localizedDescription), delay: 2)
             }).disposed(by: self.rx.disposeBag)
-           
+            
         })
         
         tableView.mj_header.beginRefreshing()
-
+        
     }
     
     
     @IBAction func addTap(_ sender: MoveButton) {
+        
+        if vm == nil {
+            HUD.flash(.label("请稍等, 正在同步数据"), delay: 2)
+            return
+        }
+        
         let addVC: AddDanMuController = ViewLoader.Storyboard.controller(from: "Main")
         navigationController?.pushViewController(addVC, animated: true)
     }
@@ -137,7 +146,7 @@ class LabelViewController: UIViewController {
                         self?.navigationController?.pushViewController(changeVC, animated: true)
                     }
                 }
-
+                
                 let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
                 alertVC.addAction(confirmAction)
                 alertVC.addAction(cancel)
@@ -183,7 +192,7 @@ extension LabelViewController: DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         let text = "空空如也, 快去添加弹幕吧"
         let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): #colorLiteral(red: 0.2017793059, green: 0.5989613533, blue: 0.856895864, alpha: 1),
-                                         NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)]
+                                                         NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)]
         
         let attributeString = NSAttributedString(string: text, attributes: attributes)
         

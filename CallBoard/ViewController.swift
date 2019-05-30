@@ -28,6 +28,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if AVUser.current() == nil {
+            AVUser.loginAnonymously { (user, error) in
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    print(user ?? "")
+                    NotificationCenter.default.post(name: .loginStateDidChnage, object: true)
+                }
+            }
+        }
+        
         
         NotificationCenter.default.rx.notification(.statuBarDidChnage)
             .takeUntil(rx.deallocated)
