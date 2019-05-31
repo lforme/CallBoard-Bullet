@@ -28,17 +28,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if AVUser.current() == nil {
-            AVUser.loginAnonymously { (user, error) in
-                if let e = error {
-                    print(e.localizedDescription)
-                } else {
-                    print(user ?? "")
-                    NotificationCenter.default.post(name: .loginStateDidChnage, object: true)
-                }
+        
+        AVUser.loginAnonymously { (user, error) in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                print(user ?? "")
+                NotificationCenter.default.post(name: .loginStateDidChnage, object: true)
             }
         }
-        
         
         NotificationCenter.default.rx.notification(.statuBarDidChnage)
             .takeUntil(rx.deallocated)
@@ -66,7 +64,7 @@ class ViewController: UIViewController {
             
             if isAlert {
                 let privacyVC: PrivacyViewController = ViewLoader.Storyboard.controller(from: "Main")
-                 this.present(privacyVC, animated: false, completion: nil)
+                this.present(privacyVC, animated: false, completion: nil)
             }
         }).disposed(by: rx.disposeBag)
         
@@ -80,7 +78,7 @@ class ViewController: UIViewController {
                 this.present(privacyVC, animated: false, completion: nil)
             }
         }
-
+        
         
     }
     
