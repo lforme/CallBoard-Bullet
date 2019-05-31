@@ -41,6 +41,36 @@ extension UIViewController {
         return btn
     }
     
+    @discardableResult
+    func createdLeftNavigationItem(title: String?, font: UIFont? = UIFont.boldSystemFont(ofSize: 16), image: UIImage?, rightEdge: CGFloat = 10, color: UIColor = UIColor.white) -> UIButton {
+        
+        let fix = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        fix.width = rightEdge - 15
+        
+        let btn = UIButton(type: .custom)
+        btn.setTitle(title, for: .normal)
+        btn.titleLabel?.font = font
+        btn.setTitleColor(color, for: .normal)
+        btn.setTitleColor(color.withAlphaComponent(0.6), for: .disabled)
+        btn.setTitleColor(color.withAlphaComponent(0.4), for: .highlighted)
+        btn.dgSetImage(image)
+        btn.sizeToFit()
+        
+        var frame = btn.frame
+        let width = frame.width
+        
+        if width < 44 {
+            fix.width = fix.width - (44 - width) / 2
+            frame.size.width = 44
+        }
+        frame.size.height = 44
+        btn.frame = frame
+        
+        let right = UIBarButtonItem(customView: btn)
+        self.navigationItem.leftBarButtonItems = [fix, right]
+        return btn
+    }
+    
     
     @discardableResult
     func showAlert(title: String?, message: String?, buttonTitles: [String]? = nil, highlightedButtonIndex: Int? = nil, completion: ((Int) -> Void)? = nil) -> UIAlertController {

@@ -30,6 +30,11 @@ class DisplayController: UIViewController {
         print("Deinit")
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +45,7 @@ class DisplayController: UIViewController {
         setupLabels()
         setupButton()
         setupGes()
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     override var shouldAutorotate: Bool {

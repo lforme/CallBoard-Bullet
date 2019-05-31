@@ -14,6 +14,7 @@
 		9C0065F8229E4D7200CA3D52 /* LabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0065F7229E4D7200CA3D52 /* LabelModel.swift */; };
 		9C0065FA229E5EA800CA3D52 /* DisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0065F9229E5EA800CA3D52 /* DisplayController.swift */; };
 		9C0065FC229E6F7A00CA3D52 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0065FB229E6F7900CA3D52 /* PrivacyViewController.swift */; };
+		9C13A7C422A0EC4F00721FC6 /* FlashLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C13A7C322A0EC4F00721FC6 /* FlashLightViewController.swift */; };
 		9C3B31D5229BB3DF00D1474F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B31D4229BB3DF00D1474F /* AppDelegate.swift */; };
 		9C3B31D7229BB3DF00D1474F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B31D6229BB3DF00D1474F /* ViewController.swift */; };
 		9C3B31DC229BB3E000D1474F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C3B31DB229BB3E000D1474F /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		9C0065F7229E4D7200CA3D52 /* LabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelModel.swift; sourceTree = "<group>"; };
 		9C0065F9229E5EA800CA3D52 /* DisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayController.swift; sourceTree = "<group>"; };
 		9C0065FB229E6F7900CA3D52 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		9C13A7C322A0EC4F00721FC6 /* FlashLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashLightViewController.swift; sourceTree = "<group>"; };
 		9C3B31D1229BB3DF00D1474F /* CallBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C3B31D4229BB3DF00D1474F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C3B31D6229BB3DF00D1474F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				9CB69382229C424200F44D13 /* AddDanMuController.swift */,
 				9C0065F9229E5EA800CA3D52 /* DisplayController.swift */,
 				9C0065FB229E6F7900CA3D52 /* PrivacyViewController.swift */,
+				9C13A7C322A0EC4F00721FC6 /* FlashLightViewController.swift */,
 				9C3B31DB229BB3E000D1474F /* Assets.xcassets */,
 				9C3B31DD229BB3E000D1474F /* LaunchScreen.storyboard */,
 				9C3B320B229C0C7E00D1474F /* Main.storyboard */,
@@ -374,6 +377,7 @@
 				9CB69383229C424200F44D13 /* AddDanMuController.swift in Sources */,
 				9C3B3209229C0B7F00D1474F /* UIButton+Ex.swift in Sources */,
 				9CBF49F6229F7DCE00AEF6A1 /* Date+Ex.swift in Sources */,
+				9C13A7C422A0EC4F00721FC6 /* FlashLightViewController.swift in Sources */,
 				9C3B31F4229C08AD00D1474F /* NSObject+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

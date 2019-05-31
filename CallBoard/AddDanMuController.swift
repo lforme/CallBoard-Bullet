@@ -193,7 +193,7 @@ class AddDanMuController: UITableViewController {
         flashSwitch.rx.value.observeOn(MainScheduler.instance).subscribe(onNext: { (isOn) in
             GlobalConfiguration.shared.flash = ("闪光灯", isOn ? 1 : 0)
             if isOn {
-                self.device?.setTorch(intensity: 1)
+                self.device?.setTorch(intensity: 1.5)
             } else {
                 self.device?.setTorch(intensity: 0)
             }

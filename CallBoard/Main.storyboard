@@ -152,6 +152,55 @@
             </objects>
             <point key="canvasLocation" x="1306" y="69"/>
         </scene>
+        <!--Flash Light View Controller-->
+        <scene sceneID="hlM-v3-Kbo">
+            <objects>
+                <viewController storyboardIdentifier="FlashLightViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0aA-Zl-lQ0" customClass="FlashLightViewController" customModule="CallBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xiu-vu-goM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ATm-EC-4h7">
+                                <rect key="frame" x="138.5" y="64" width="137" height="29"/>
+                                <segments>
+                                    <segment title="竖立闪烁"/>
+                                    <segment title="快速闪烁"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.73684144019999998" blue="0.45877289770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLX-jY-cvd">
+                                <rect key="frame" x="20" y="64" width="30" height="34"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="竖起手机, 闪光灯开始闪烁." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRP-0p-62C">
+                                <rect key="frame" x="20" y="152" width="374" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PLX-jY-cvd" firstAttribute="top" secondItem="xiu-vu-goM" secondAttribute="topMargin" constant="20" id="CK4-4x-bCH"/>
+                            <constraint firstItem="qRP-0p-62C" firstAttribute="leading" secondItem="A9O-E6-fUc" secondAttribute="leading" constant="20" id="FHJ-Xw-TzO"/>
+                            <constraint firstItem="A9O-E6-fUc" firstAttribute="trailing" secondItem="qRP-0p-62C" secondAttribute="trailing" constant="20" id="MiR-fw-OTH"/>
+                            <constraint firstItem="ATm-EC-4h7" firstAttribute="centerX" secondItem="A9O-E6-fUc" secondAttribute="centerX" id="OTt-XO-aZ2"/>
+                            <constraint firstItem="ATm-EC-4h7" firstAttribute="top" secondItem="A9O-E6-fUc" secondAttribute="top" constant="20" id="Qre-Z3-des"/>
+                            <constraint firstItem="PLX-jY-cvd" firstAttribute="leading" secondItem="A9O-E6-fUc" secondAttribute="leading" constant="20" id="hRJ-4p-MhS"/>
+                            <constraint firstItem="qRP-0p-62C" firstAttribute="top" secondItem="ATm-EC-4h7" secondAttribute="bottom" constant="60" id="jDO-4i-a40"/>
+                            <constraint firstItem="A9O-E6-fUc" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qRP-0p-62C" secondAttribute="bottom" constant="20" id="lVT-pm-ZN8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A9O-E6-fUc"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="PLX-jY-cvd" id="dP9-Rx-mYU"/>
+                        <outlet property="descriptionLabel" destination="qRP-0p-62C" id="xg1-uc-7BW"/>
+                        <outlet property="modeSegment" destination="ATm-EC-4h7" id="gGH-tt-6r1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PCy-zo-OzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="484.05797101449281" y="837.72321428571422"/>
+        </scene>
         <!--Add Dan Mu Controller-->
         <scene sceneID="dQD-be-vhC">
             <objects>

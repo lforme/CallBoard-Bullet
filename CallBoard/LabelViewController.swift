@@ -74,6 +74,18 @@ class LabelViewController: UIViewController {
                     }
                 }
             }).disposed(by: rx.disposeBag)
+        
+        setupLeftNivationItem()
+    }
+    
+    func setupLeftNivationItem() {
+        
+        createdLeftNavigationItem(title: nil, image: UIImage(named: "shandian_icon")).rx.tap.subscribe(onNext: {[weak self] (_) in
+            
+            let flashLightVC: FlashLightViewController = ViewLoader.Storyboard.controller(from: "Main")
+            self?.navigationController?.pushViewController(flashLightVC, animated: true)
+            
+        }).disposed(by: rx.disposeBag)
     }
     
     func setupTableView() {
