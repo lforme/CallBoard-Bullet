@@ -16,6 +16,7 @@ class ServerHelper: NSObject {
     
     public static let shared = ServerHelper()
     public var liveDataHasChanged = BehaviorRelay<DataChangedNotification?>(value: nil)
+    public var adminPwd: String?
     
     /////////// 私有属性 私有方法/////////////////
     fileprivate var doingLiveQuery: AVLiveQuery?
@@ -30,6 +31,7 @@ class ServerHelper: NSObject {
         self.doingLiveQuery = AVLiveQuery(query: query)
         self.doingLiveQuery?.subscribe(callback: { (s, error) in })
         self.doingLiveQuery?.delegate = self
+        getAdminPwd()
     }
     
     
@@ -58,6 +60,25 @@ class ServerHelper: NSObject {
         objc.setObject(false, forKey: "isFristShow")
         objc.setObject(false, forKey: "backButtonHiden")
         objc.saveInBackground()
+    }
+    
+    func makeAdminPwd() {
+        let objc = AVObject(className: DatabaseKey.amdinPwdTable)
+        objc.setObject(Bundle.main.bundleIdentifier, forKey: "bundleIdentifier")
+        objc.setObject("bbqqdd123", forKey: "amdinPwd")
+        objc.saveEventually()
+    }
+    
+    private func getAdminPwd() {
+        let q = AVQuery(className: DatabaseKey.amdinPwdTable)
+        q.whereKey("bundleIdentifier", equalTo: Bundle.main.bundleIdentifier ?? "com.why.CallBoard")
+        q.getFirstObjectInBackground {[unowned self] (objc, error) in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                self.adminPwd = objc?.object(forKey: "amdinPwd") as? String
+            }
+        }
     }
     
 }

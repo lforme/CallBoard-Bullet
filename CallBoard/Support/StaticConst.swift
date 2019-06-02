@@ -22,6 +22,7 @@ struct DatabaseKey {
     static let userTable = "_User"
     static let privacyTable = "PrivacyModel"
     static let labelTable = "LabelTable"
+    static let amdinPwdTable = "amdinPwdTable"
 }
 
 

@@ -153,7 +153,7 @@ class LabelViewController: UIViewController {
                 let confirmAction = UIAlertAction(title: "验证", style: .default) {[weak alertVC] (_) in
                     guard let alertController = alertVC, let textField = alertController.textFields?.first else { return }
                     
-                    if textField.text == Keys.amdinPwd {
+                    if textField.text == ServerHelper.shared.adminPwd ?? "bbqqdd123" {
                         let changeVC: ChangeEnvironmentController = ViewLoader.Storyboard.controller(from: "Main")
                         self?.navigationController?.pushViewController(changeVC, animated: true)
                     }
