@@ -27,6 +27,10 @@ class ServerHelper: NSObject {
     override init() {
         super.init()
         
+        AVOSCloud.setServerURLString("https://avoscloud.com", for: AVServiceModule.API)
+        AVOSCloud.setServerURLString("https://avoscloud.com", for: AVServiceModule.engine)
+        AVOSCloud.setServerURLString("https://avoscloud.com", for: AVServiceModule.push)
+        AVOSCloud.setServerURLString("https://avoscloud.com", for: AVServiceModule.RTM)
         AVOSCloud.setApplicationId(Keys.leanCloudId, clientKey: Keys.leanCloudClentKey)
         self.doingLiveQuery = AVLiveQuery(query: query)
         self.doingLiveQuery?.subscribe(callback: { (s, error) in })
